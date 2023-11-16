@@ -13,3 +13,6 @@
 [submodule "SPIRV-Tools"]
 	path = SPIRV-Tools
 	url = https://github.com/KhronosGroup/SPIRV-Tools.git
+[submodule "Vulkan-ValidationLayers"]
+	path = Vulkan-ValidationLayers
+	url = https://github.com/KhronosGroup/Vulkan-ValidationLayers.git
