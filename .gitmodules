@@ -22,6 +22,3 @@
 [submodule "Vulkan-Loader"]
 	path = Vulkan-Loader
 	url = https://github.com/KhronosGroup/Vulkan-Loader.git
-[submodule "Vulkan-ExtensionLayer"]
-	path = Vulkan-ExtensionLayer
-	url = https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git
