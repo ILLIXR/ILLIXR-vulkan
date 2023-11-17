@@ -19,3 +19,6 @@
 [submodule "glslang"]
 	path = glslang
 	url = https://github.com/KhronosGroup/glslang.git
+[submodule "Vulkan-Loader"]
+	path = Vulkan-Loader
+	url = https://github.com/KhronosGroup/Vulkan-Loader.git
