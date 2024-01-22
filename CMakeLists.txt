@@ -67,7 +67,7 @@ if (NOT Vulkan_FOUND)
         build_ext_project(SPIRV-Headers)
         find_package(SPIRV-Headers 1.5.5 REQUIRED)
 
-        build_ext_project(SPIRV-Tools -DSPIRV_TOOLS_BUILD_STATIC=ON -DINSTALL_GTEST=OFF -DBUILD_TESTING=OFF -DSPIRV_SKIP_TESTS=ON)
+        build_ext_project(SPIRV-Tools -DSPIRV_TOOLS_BUILD_STATIC=ON -DSPIRV-Headers_SOURCE_DIR=${CMAKE_SOURCE_DIR}/SPIRV-Headers -DINSTALL_GTEST=OFF -DBUILD_TESTING=OFF -DSPIRV_SKIP_TESTS=ON)
         find_package(SPIRV-Tools REQUIRED)
     endif()
 
