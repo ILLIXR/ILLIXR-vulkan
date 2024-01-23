@@ -16,7 +16,7 @@ endif()
 project(ILLIXR_vulkan VERSION 1.3.268)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_MODULE_PATH "${CMAKE_INSTALL_PREFIX}/lib/cmake;${CMAKE_INSTALL_PREFIX}/share/cmake;${CMAKE_MODULE_PATH}")
+set(CMAKE_MODULE_PATH "${CMAKE_INSTALL_PREFIX}/lib/cmake")
 
 option(BUILD_PARALLEL_LEVEL "Number of parallel build jobs")
 if(NOT BUILD_PARALLEL_LEVEL)
@@ -40,7 +40,7 @@ function (build_ext_project target)
     ExternalProject_add(${target}
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/${target}
         PREFIX ${PRJ_BUILD_DIR}
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=Release ${ARGN} -DCMAKE_MODULE_PATH=\"${CMAKE_MODULE_PATH}\"
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=Release ${ARGN} -DCMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}
         BUILD_COMMAND cmake --build . --parallel ${BUILD_PARALLEL_LEVEL}
         )
     add_custom_target(build_${target})
