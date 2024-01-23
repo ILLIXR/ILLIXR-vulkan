@@ -40,7 +40,7 @@ function (build_ext_project target)
     ExternalProject_add(${target}
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/${target}
         PREFIX ${PRJ_BUILD_DIR}
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=Release ${ARGN} -DCMAKE_MODULE_PATH="${CMAKE_MODULE_PATH}"
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=Release ${ARGN} -DCMAKE_MODULE_PATH=\"${CMAKE_MODULE_PATH}\"
         BUILD_COMMAND cmake --build . --parallel ${BUILD_PARALLEL_LEVEL}
         )
     add_custom_target(build_${target})
